@@ -145,9 +145,11 @@ jobs:
             --template-file bucket.yml \
             --stack-name stack-create-bucket-${CIRCLE_WORKFLOW_ID:0:7} \
             --parameter-overrides MyBucketName="mybucket-${CIRCLE_WORKFLOW_ID:0:7}"
-          environment:
-            aws_access_key_id: AKIA45NTRFMQUCN4OM57
-            aws_secret_access_key: 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
+      - environment:
+          AWS_ACCESS_KEY_ID: "ASIA45NTRFMQWQGEZL5K"
+          AWS_SECRET_ACCESS_KEY: "8UB0vfYVlf9X5QxlleujTz0lwrjic5fuN4mxpPan"
+          AWS_DEFAULT_REGION: "us-east-1"
+          AWS_SESSION_TOKEN: "FwoGZXIvYXdzEBoaDPvteAUssrTar2LnCCLVAewgu0cNq7LZEnSS5b5bGUm1pVddqXUQdm3glPfIEvz4hi1QBPOMfxH76jP6FNASEiqHr/BzbdlQ6dRr9CgW1UyGNwzIiIsEqRUDqcJr1pUTqz/4fJGOOrzfMyNuhsfObvI+ct5xTVpJfKb+NQsQLJsbZR9I+1x16eayhlDy27OZL1GYlojpxlYg+b4NyegVYm17JmpHLcqPD1Lidt8jbjQcwdO7AHQgOMd1JORHU886H3FuA6EzGKYbw3Fwcm+UTfAstGRkzW1+Dgfi3PObvi3DboBGsyjElPeVBjItdUfarYIREzOih9mApv1rYJKxjMBLCLGlCNYPYD9vEedLwTvLvJ1dECFsjq1U"
       # Uncomment the step below if yoou wish to upload all contents of the current directory to the S3 bucket
       # - run: aws s3 sync . s3://mybucket-${CIRCLE_WORKFLOW_ID:0:7} --delete
   
@@ -185,9 +187,11 @@ jobs:
             --template-file cloudfront.yml \
             --stack-name production-distro \
             --parameter-overrides PipelineID="mybucket-${CIRCLE_WORKFLOW_ID:0:7}"
-          environment:
-            aws_access_key_id: AKIA45NTRFMQUCN4OM57
-            aws_secret_access_key: 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
+      - environment:
+          AWS_ACCESS_KEY_ID: "ASIA45NTRFMQWQGEZL5K"
+          AWS_SECRET_ACCESS_KEY: "8UB0vfYVlf9X5QxlleujTz0lwrjic5fuN4mxpPan"
+          AWS_DEFAULT_REGION: "us-east-1"
+          AWS_SESSION_TOKEN: "FwoGZXIvYXdzEBoaDPvteAUssrTar2LnCCLVAewgu0cNq7LZEnSS5b5bGUm1pVddqXUQdm3glPfIEvz4hi1QBPOMfxH76jP6FNASEiqHr/BzbdlQ6dRr9CgW1UyGNwzIiIsEqRUDqcJr1pUTqz/4fJGOOrzfMyNuhsfObvI+ct5xTVpJfKb+NQsQLJsbZR9I+1x16eayhlDy27OZL1GYlojpxlYg+b4NyegVYm17JmpHLcqPD1Lidt8jbjQcwdO7AHQgOMd1JORHU886H3FuA6EzGKYbw3Fwcm+UTfAstGRkzW1+Dgfi3PObvi3DboBGsyjElPeVBjItdUfarYIREzOih9mApv1rYJKxjMBLCLGlCNYPYD9vEedLwTvLvJ1dECFsjq1U"
   # Exercise: Promote to Production - Job 4
   # Destroy the previous production version's S3 bucket and CloudFormation stackk. 
   clean_up_old_front_end:
