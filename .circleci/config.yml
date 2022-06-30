@@ -217,7 +217,7 @@ workflows:
       #     requires:
       #       - upload_file
       # - create_infrastructure
-      # - configure_infrastructure
+      # - configure_infrastructures
       - create_and_deploy_front_end
       - promote_to_production:
           requires: 
