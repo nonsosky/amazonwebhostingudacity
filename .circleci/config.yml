@@ -28,7 +28,7 @@ orbs:
 #           command: |
 #             aws cloudformation delete-stack --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5}
           
-# jobs:
+jobs:
 #   # Exercise: Creating a Simple Workflow
 #   # Exercise: Environment Variables
 #   # Exercise: Reusable Job Code 
