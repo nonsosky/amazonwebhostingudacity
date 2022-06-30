@@ -169,7 +169,7 @@ jobs:
   
   # Exercise: Promote to Production - Job 3
   # Executes the cloudfront.yml template that will modify the existing CloudFront Distribution, change its target from the old bucket to the new bucket - `mybucket-${CIRCLE_WORKFLOW_ID:0:7}`. 
-  # Notice here we use the stack name `production-distro` which is the same name we used while deploying to the S3 bucket manually.
+  # Notice here we use the stack names `production-distro` which is the same name we used while deploying to the S3 bucket manually.
   promote_to_production:
     docker:
       - image: amazon/aws-cli
